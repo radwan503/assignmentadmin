@@ -1,0 +1,125 @@
+@use "../../variable" as *;
+
+.sidebar-menu {
+ display: block;
+ font-size: 1.4rem;
+ font-weight: 500;
+ color: #fff;
+ padding: 20px 0px;
+ padding-left: 20px;
+ border-top-left-radius: 15px;
+ border-bottom-left-radius: 15px;
+ background-color: $viloate;
+
+ .logo {
+  margin-bottom: 30px;
+  text-align: center;
+ }
+
+ .small-logo {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 15px;
+ }
+
+ @media(max-width:767.98px) {
+  .logo {
+   display: none;
+  }
+ }
+
+ @media(min-width:767.98px) {
+  .small-logo {
+   display: none;
+  }
+ }
+
+ .nav-item {
+  position: relative;
+  display: block;
+
+
+  .nav-link {
+   color: $white;
+   font-size: 1rem;
+   margin-left: 10px;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   height: 45px;
+   font-weight: 500;
+   text-decoration: none;
+   padding: 15px;
+   padding-left: 40px;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+
+   svg {
+    z-index: 99;
+   }
+
+   @media (max-width:575.98px) {
+    svg {
+     height: 20px !important;
+     width: 20px !important;
+
+    }
+   }
+
+   &.active {
+    color: $black;
+    font-weight: 600;
+    background-color: #fff;
+
+    &::before {
+     content: "";
+     position: absolute;
+     top: -30px;
+     right: 0;
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     box-shadow: 15px 15px 0 $white;
+     background: $viloate;
+    }
+
+    &::after {
+     content: "";
+     position: absolute;
+     bottom: -30px;
+     right: 0;
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     box-shadow: 15px -15px 0 $white;
+     background: $viloate;
+    }
+   }
+
+   @media (max-width:767.98px) {
+    padding: 0;
+    padding-left: 20px;
+   }
+
+   @media (max-width:400.98px) {
+    padding: 0;
+    padding-left: 10px;
+   }
+  }
+
+  @media (max-width:991.98px) {
+   .nav-text {
+    display: none;
+   }
+  }
+ }
+
+ @media (max-width:575.98px) {
+  padding: 15px 0px;
+ }
+
+ @media (min-width:1199.98px) {
+  padding-left: 0;
+ }
+
+}
